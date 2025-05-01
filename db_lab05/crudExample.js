@@ -13,10 +13,15 @@ async function basicCrud() {
     const changeName = '王明';
 
     // 要新增的學生資料
-    const newName = '王曉明';
-    const newStudentId = 'S10810001';
-    const newGender = 'M';
-    const newEmail = 'wang@example.com';
+    const newName = '王跌跌';
+    const newStudentId = 'S10831020';
+    const newBirth_Date = '2003-12-27';
+    const newGender = 'F';
+    const newEmail = 'demi921227@example.com';
+    const newPhone = '0952-350-818';
+    const newAddress = '新北市三重區車路頭街122巷39號';
+    const newAdmission_Year = '2025';
+    const newStatus = '在學';
     const newDepartmentId = 'CS001';
     
     // 先查詢是否有這位學生 (SELECT)
@@ -33,7 +38,7 @@ async function basicCrud() {
     console.log('已更新學生名稱');
 
     // 新增一名學生 (INSERT)
-    await conn.query('INSERT INTO STUDENT (Student_ID, Name, Gender, Email, Department_ID) VALUES (?, ?, ?, ?, ?)', [newStudentId, newName, newGender, newEmail, newDepartmentId]);
+    await conn.query('INSERT INTO STUDENT (Student_ID, Name, Birth_Date, Gender, Email, Phone, Address, Admission_Year, Status, Department_ID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [newStudentId, newName, newBirth_Date, newGender, newEmail, newPhone, newAddress, newAdmission_Year, newStatus, newDepartmentId]);
     console.log('已新增一筆學生資料');
 
     // 刪除一名學生 (DELETE)
