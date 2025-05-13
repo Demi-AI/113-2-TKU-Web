@@ -26,6 +26,13 @@ Course.belongsToMany(Student, {
   otherKey: 'Student_ID'
 });
 
+// 一對多：讓 Enrollment 也能被 include
+Student.hasMany(Enrollment, { foreignKey: 'Student_ID' });
+Enrollment.belongsTo(Student, { foreignKey: 'Student_ID' });
+
+Course.hasMany(Enrollment, { foreignKey: 'Course_ID' });
+Enrollment.belongsTo(Course, { foreignKey: 'Course_ID' });
+
 module.exports = {
   sequelize,
   Student,
