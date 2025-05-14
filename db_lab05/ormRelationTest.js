@@ -8,7 +8,7 @@ async function testRelations() {
             include: [Department]
         });
 
-        console.log(`學生 ${student.Name} 屬於 ${student.Department.Department.Name} 系`);
+        console.log(`學生 ${student.Name} 屬於 ${student.Department.Name} 系`);
 
         // 查詢學生及其選修的所有課程
         const studentWithCourses = await Student.findByPk('S10811005', {
